@@ -11,6 +11,8 @@ app.use(cors({
 }));
 app.use(cookieParser());
 app.use(express.json());
+app.use('/users', require('./apis/users'));
+app.use('/token', require('./apis/token'));
 
 const PORT = process.env.PORT || 5000;
 
