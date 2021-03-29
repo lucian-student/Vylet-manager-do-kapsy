@@ -1,10 +1,13 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import Container from 'react-bootstrap/Container';
 
 function Main() {
     return (
-        <Fragment>
-            Main
-        </Fragment>
+        <div className='firstCenterDiv'>
+            <Container className='secondCenterDiv'>
+                Welcome
+            </Container>
+        </div>
     )
 }
 

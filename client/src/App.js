@@ -11,8 +11,9 @@ import Login from './pages/login';
 import Register from './pages/register';
 import WelcomePage from './pages/welcomePage';
 import Main from './pages/main';
+import Menu from './components/menu';
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const source = useRef(axios.CancelToken.source());
   const { loginUser } = useContext(AuthContext);
   useEffect(() => {
@@ -25,10 +26,15 @@ function App() {
       cancelToken.cancel('canceled');
     }
   }, [loginUser]);
+
+  if (loading) {
+    return <div>Loading ...</div>
+  }
   return (
     <Fragment>
       {!loading && (
         <Router>
+          <Menu />
           <Switch>
             <AuthRoute exact path='/routes/main' component={Main} />
             <NotAuthRoute exact path='/routes/login' component={Login} />

@@ -68,7 +68,7 @@ router.post('/register/', validation, async (req, res) => {
             res.cookie('refreshToken', refreshToken, {
                 httpOnly: true,
                 maxAge: 60 * 60 * 24 * 7 * 1000,
-                path: '/token/refresh_token'
+                path: '/apis/token/refresh_token'
                 //secure:true
             });
             await client.query('COMMIT');
@@ -112,7 +112,7 @@ router.post('/login/', validation, async (req, res) => {
                 res.cookie('refreshToken', refreshToken, {
                     httpOnly: true,
                     maxAge: 60 * 60 * 24 * 7 * 1000,
-                    path: '/token/refresh_token'
+                    path: '/apis/token/refresh_token'
                     // secure:true
                 });
                 await client.query('COMMIT');
@@ -146,7 +146,7 @@ router.delete('/logout', authorization, async (req, res) => {
         res.cookie('refreshToken', '', {
             maxAge: 0,
             httpOnly: true,
-            path: '/token/refresh_token'
+            path: '/apis/token/refresh_token'
             //secure:true
         });
         res.status(200).json('logout');
