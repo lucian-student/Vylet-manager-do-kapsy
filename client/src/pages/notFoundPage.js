@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 
-function Register() {
+function NotFoundPage() {
     return (
         <Fragment>
-            Register
+            Not found page
         </Fragment>
     )
 }
 
-export default Register;
+export default NotFoundPage;

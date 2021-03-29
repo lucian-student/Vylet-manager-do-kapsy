@@ -12,7 +12,7 @@ function NotAuthRoute({ component: Component, ...rest }) {
         <Route
             {...rest}
             render={props =>
-                currentUser ? <Redirect to='/main' /> :
+                currentUser ? <Redirect to='/routes/main' /> :
                     <Component {...props} />
             }
         />
