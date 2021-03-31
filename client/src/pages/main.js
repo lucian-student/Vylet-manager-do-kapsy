@@ -1,13 +1,13 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
+import MainPageContent from '../components/main/mainPageContent';
+import { TripMapProvider } from '../context/tripMap';
 
 function Main() {
+
     return (
-        <div className='firstCenterDiv'>
-            <Container className='secondCenterDiv'>
-                Welcome
-            </Container>
-        </div>
+        <TripMapProvider>
+            <MainPageContent />
+        </TripMapProvider>
     )
 }
 
